@@ -14,7 +14,7 @@ const renderProduct = (product = { title: '', price: 0 }) => {
 };
 const renderPage = products => {
     const productsList = products.map(product => renderProduct(product));
-    // 
+    // преобразуем массив в строку,чтобы убрать запятые.
     document.querySelector('.products').innerHTML = productsList.join("");
 };
 
