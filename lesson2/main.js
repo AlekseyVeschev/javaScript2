@@ -1,23 +1,23 @@
 class ProductsList {
     constructor(container = ".products") {
         this.container = container
-        this.goots = [
+        this.goods = [
             { id: 1, title: 'Notebook', price: 2000 },
             { id: 2, title: 'Mouse', price: 20 },
             { id: 3, title: 'Keyboard', price: 200 },
             { id: 4, title: 'Gamepad', price: 50 },
         ]
     }
-    gootsSumPrice() {
+    getSumPriceOfGoods() {
         let result = 0
-        this.goots.forEach(product => {
+        this.goods.forEach(product => {
             result += product.price
         })
         return result
     }
     render() {
         const box = document.querySelector(this.container)
-        this.goots.forEach(product => {
+        this.goods.forEach(product => {
             const card = new ProductItem(product)
             box.insertAdjacentHTML("beforeend", card.render())
         })
@@ -41,30 +41,28 @@ class ProductItem {
             </div>`
     }
 }
-class Basket {
+class Cart {
     constructor() {
-        this.productsBasket = []
-    }
-    addProductBasket() {
 
     }
-    removeProductBasket() {
+    addProduct() {
+
+    }
+    removeProduct() {
+
+    }
+    getSumPriceOfProduct() {
 
     }
     render() {
     }
 }
 
-class ProductBasket extends ProductItem {
-    constructor(product, img) {
-        super(product, img)
+class CartProduct {
+    constructor() {
     }
     render() {
-        return `<div class="product">
-                <h3>${product.title}</h3>
-                <p>${product.price}</p>
-                <button class="buy-btn">Удалить</button>
-            </div>`
+        return ""
     }
 }
 

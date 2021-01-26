@@ -26,34 +26,22 @@ class Hamburger {
             }
         })
     }
-    // Убрать добавку
-    removeTopping(topping) {
-        this.toppings.forEach(item => {
-            if (item.name == topping) {
-                this.toppingsList.filter(item => item.name !== topping)
-            }
-        })
-    }
-    // Получить список добавок
-    getToppings(topping) {
+    // Записать список добавок
+    setToppings() {
         this.toppingsList.forEach(item => {
-            this.toppings.forEach(topping => {
-                if (topping.name == item.name) {
-                    this.hamburger.push(item)
-                }
-            })
+            this.hamburger.push(item)
         })
     }
-    // Узнать размер гамбургера
-    getSize() {
+    // Записать размер гамбургера
+    setSize() {
         this.sizes.forEach(item => {
             if (this.size == item.name) {
                 this.hamburger.push(item)
             }
         })
     }
-    // Узнать начинку гамбургера
-    getStuffing() {
+    // Записать начинку гамбургера
+    setStuffing() {
         this.stuffings.forEach(item => {
             if (this.stuffing == item.name) {
                 this.hamburger.push(item)
@@ -81,23 +69,23 @@ class Hamburger {
 const form = document.querySelector("form")
 
 const onSubmit = (event) => {
+    event.preventDefault();
+
     let size = event.target.size.value
     let stuffing = event.target.stuffing.value
     let topping = event.target.topping
 
     const hamburger = new Hamburger(size, stuffing)
-    event.preventDefault();
-    hamburger.getSize()
-    hamburger.getStuffing()
+
+    hamburger.setSize()
+    hamburger.setStuffing()
 
     topping.forEach(item => {
         if (item.checked) {
             hamburger.addTopping(item.value)
-        } else {
-            hamburger.removeTopping(item.value)
         }
     })
-    hamburger.getToppings()
+    hamburger.setToppings()
     form.insertAdjacentHTML("beforebegin",
         `<h2>
         Price hamburger: ${hamburger.calculatePrice()}<br>
