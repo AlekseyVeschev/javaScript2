@@ -54,25 +54,25 @@ class ProductItem {
 class Cart {
     constructor(container = ".products") {
         this.container = container
-        this.goodsCart = []
+        this.productsCart = []
         this._getGoodsCart()
             .then(data => {
-                this.goodsCart = [...data.contents]
+                this.productsCart = [...data.contents]
                 this.amount = data.amount
-                this.countGoods = data.countGoods
+                this.countProducts = data.countGoods
                 this.render()
             })
     }
     _getGoodsCart = () => {
         return fetch(`${API}getBasket.json`)
             .then(response => response.json())
-            .catch((error) => console.log("goodsCart", error))
+            .catch((error) => console.log("productsCart", error))
     }
     addProduct() {
 
     }
     _removeProduct(event) {
-        this.goodsCart = this.goodsCart.filter(item => event.target.parentNode.dataset["id"] != item.id_product)
+        this.productsCart = this.productsCart.filter(item => event.target.parentNode.dataset["id"] != item.id_product)
         this.render()
     }
     getSumPriceOfProduct() {
@@ -81,7 +81,7 @@ class Cart {
     render() {
         const box = document.querySelector(this.container)
         box.innerHTML = ""
-        this.goodsCart.forEach(product => {
+        this.productsCart.forEach(product => {
             const card = new CartProduct(product)
             box.insertAdjacentHTML("beforeend", card.render())
         })
