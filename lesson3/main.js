@@ -1,4 +1,5 @@
 const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/'
+
 class ProductsList {
     constructor(container = ".products") {
         this.container = container
@@ -57,6 +58,8 @@ class Cart {
         this._getGoodsCart()
             .then(data => {
                 this.goodsCart = [...data.contents]
+                this.amount = data.amount
+                this.countGoods = data.countGoods
                 this.render()
             })
     }
@@ -68,9 +71,9 @@ class Cart {
     addProduct() {
 
     }
-    removeProduct(event) {
-        console.log("event.target")
-        return this.goodsCart.filter(item => item.id !== event.target.id)
+    _removeProduct(event) {
+        this.goodsCart = this.goodsCart.filter(item => event.target.parentNode.dataset["id"] != item.id_product)
+        this.render()
     }
     getSumPriceOfProduct() {
 
@@ -82,6 +85,8 @@ class Cart {
             const card = new CartProduct(product)
             box.insertAdjacentHTML("beforeend", card.render())
         })
+        const removeProductCartButtons = document.querySelectorAll(".remove-btn")
+        removeProductCartButtons.forEach(btn => btn.addEventListener("click", this._removeProduct.bind(this)))
     }
 }
 
@@ -95,7 +100,7 @@ class CartProduct {
         this.img = img
     }
     render() {
-        return `<div class="product">
+        return `<div class="product" data-id = ${this.id}>
                <img src="${this.img}"/>
                <h3>${this.title}</h3>
                <p>${this.price}</p>
@@ -107,11 +112,9 @@ class CartProduct {
 
 const getCart = () => {
     const cart = new Cart()
-    cart.render()
 }
 
-const buttonCart = document.querySelector(".btn-cart")
-buttonCart.addEventListener("click", getCart)
+const productsList = new ProductsList();
 
-const cards = new ProductsList()
-cards.render()
+const buttonCart = document.querySelector(".btn-cart");
+buttonCart.addEventListener("click", getCart)
