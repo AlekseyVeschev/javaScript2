@@ -3,32 +3,27 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 class ProductsList {
     constructor(container = ".products") {
         this.container = container
-        this.goods = []
-
-        this._getGoods()
+        this.products = []
+        this._getProducts()
             .then(data => {
-                this.goods = [...data]
+                this.products = [...data]
                 this.render()
             })
 
     }
-    _getGoods = () => {
+    _getProducts = () => {
         return fetch(`${API}catalogData.json`)
             .then(response => response.json())
-            .catch((error) => console.log("goods", error))
+            .catch((error) => console.log("products", error))
     }
-    getSumPriceOfGoods() {
-        let result = 0
-        this.goods.forEach(product => {
-            result += product.price
-        })
-        return result
+    getSumPriceOfProducts() {
+        return this.products.reduce((sum, product) => sum += product.price, 0)
     }
     render() {
         const box = document.querySelector(this.container)
-        this.goods.forEach(product => {
-            const card = new ProductItem(product)
-            box.insertAdjacentHTML("beforeend", card.render())
+        this.products.forEach(product => {
+            const productItem = new ProductItem(product)
+            box.insertAdjacentHTML("beforeend", productItem.render())
         })
     }
 }
