@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <span class="logo">VeshcheV</span>
+            <div class="header-block">
+                <form action="#" class="search-form">
+                    <input type="text" class="search-field" v-model="userSearch" @input="filterProducts">
+                    <button class="btn-search" type="submit">&#128269</button>
+                </form>
+                <button class="btn btn-cart" type="button" @click="show =!show">Корзина</button>
+                <div v-if="show" class="cart">
+                    <div>Кол-во товара: {{countGoodsCart}}</div>
+                    <div>На сумму: {{amountCart}}$</div>
+                    <div class="cart-product" v-for="productCart of productsCart" :key="productCart.id_product">
+                        <div class="productCart">
+                            <h3>{{productCart.product_name}}</h3>
+                            <p>{{productCart.price}} $</p>
+                            <p>{{productCart.quantity}}</p>
+                            <button class="btn remove-btn" @click="removeProductCart(productCart)">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="products">
+                <div class="product-item" v-for="product of filteredProducts" :key="product.id_product">
+                    <div class="product">
+                        <img :src="imgProduct">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}} $</p>
+                        <button class="btn buy-btn" @click="addProductInCart(product)">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
