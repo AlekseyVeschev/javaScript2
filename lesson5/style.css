@@ -31,6 +31,24 @@ header {
   position: relative;
   margin-left: 16px;
 }
+.btn-close-cart{
+  border: none;
+  background-color: #998675;
+  color: #fff;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 4px;
+ }
+.cart{
+  padding: 32px;
+  background-color: #F0F0F0;
+  position: absolute;
+  top: 64px;
+  right: 4px;
+  box-shadow: -20px 19px 14px 0px;
+  border-radius: 4px;
+}
 .search-field {
   border: none;
   border-bottom: 2px solid #fff;
@@ -44,15 +62,7 @@ header {
     border: none;
     padding: 8px;
   }
-.cart{
-  padding: 32px;
-  background-color: #F0F0F0;
-  position: absolute;
-  top: 64px;
-  right: 4px;
-  box-shadow: -20px 19px 14px 0px;
-  border-radius: 4px;
-}
+
 .btn {
   padding: 8px 24px;
   background-color: #998675;

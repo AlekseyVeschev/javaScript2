@@ -18,8 +18,9 @@
                 </form>
                 <button class="btn btn-cart" type="button" @click="show =!show">Корзина</button>
                 <div v-if="show" class="cart">
-                    <div>Кол-во товара: {{countGoodsCart}}</div>
-                    <div>На сумму: {{amountCart}}&#8381</div>
+                    <button class="btn-close-cart" @click="show = false">&#10006;</button>
+                    <p>Кол-во товара: {{countGoodsCart}}</p>
+                    <span>На сумму: {{amountCart}}&#8381</span>
                     <div class="cart-product" v-for="productCart of productsCart" :key="productCart.id_product">
                         <div class="productCart">
                             <h3>{{productCart.product_name}}</h3>
