@@ -21,12 +21,14 @@
                     <button class="btn-close-cart" @click="show = false">&#10006;</button>
                     <p>Кол-во товара: {{countGoodsCart}}</p>
                     <span>На сумму: {{amountCart}}&#8381</span>
+                    <hr>
                     <div class="cart-product" v-for="productCart of productsCart" :key="productCart.id_product">
                         <div class="productCart">
                             <h3>{{productCart.product_name}}</h3>
                             <p>{{productCart.price}} &#8381</p>
                             <p>{{productCart.quantity}}</p>
                             <button class="btn remove-btn" @click="removeProductCart(productCart)">Удалить</button>
+                            <hr>
                         </div>
                     </div>
                 </div>

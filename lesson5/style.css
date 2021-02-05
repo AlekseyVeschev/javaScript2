@@ -39,6 +39,10 @@ header {
   top: 8px;
   right: 8px;
   border-radius: 4px;
+  transition: 1.5s;
+ }
+ .btn-close-cart:hover {
+  background-color: red;
  }
 .cart{
   padding: 32px;
