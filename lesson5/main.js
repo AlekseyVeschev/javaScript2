@@ -34,6 +34,8 @@ const app = new Vue({
             }
         },
         removeProductCart(productCart) {
+            this.amountCart -= productCart.price
+            this.countGoodsCart--
             if (productCart.quantity > 1) {
                 this.productsCart.forEach(el => {
                     if (el.id_product === productCart.id_product) {

@@ -19,11 +19,11 @@
                 <button class="btn btn-cart" type="button" @click="show =!show">Корзина</button>
                 <div v-if="show" class="cart">
                     <div>Кол-во товара: {{countGoodsCart}}</div>
-                    <div>На сумму: {{amountCart}}$</div>
+                    <div>На сумму: {{amountCart}}&#8381</div>
                     <div class="cart-product" v-for="productCart of productsCart" :key="productCart.id_product">
                         <div class="productCart">
                             <h3>{{productCart.product_name}}</h3>
-                            <p>{{productCart.price}} $</p>
+                            <p>{{productCart.price}} &#8381</p>
                             <p>{{productCart.quantity}}</p>
                             <button class="btn remove-btn" @click="removeProductCart(productCart)">Удалить</button>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="product">
                         <img :src="imgProduct">
                         <h3>{{product.product_name}}</h3>
-                        <p>{{product.price}} $</p>
+                        <p>{{product.price}} &#8381</p>
                         <button class="btn buy-btn" @click="addProductInCart(product)">Купить</button>
                     </div>
                 </div>
