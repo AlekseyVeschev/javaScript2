@@ -19,11 +19,12 @@ const replaceSingleToDoubleQuotes = (text) => {
     return text.replace(/\'/g, "\"")
 }
 
-console.log(replaceSingleToDoubleQuotes(text))
+// console.log(replaceSingleToDoubleQuotes(text))
 
 
 const replaceQuotesWithoutApostrophe = (text) => {
-    return text.replace(/(:\s|\.|\?)\'/g, "$1\"")
+    // return text.replace(/(:\s|\.|\?)\'/g, "$1\"")
+    return text.replace(/\B'|'\B/g, "\"")
 }
 console.log(replaceQuotesWithoutApostrophe(text))
 
