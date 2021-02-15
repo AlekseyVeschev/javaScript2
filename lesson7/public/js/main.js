@@ -82,7 +82,6 @@ const app = new Vue({
                             )
                         }
                     })
-
             }
         },
         filterProducts() {
