@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+</head>
+
+<body>
+    <div class="container" id="app">
+        <header>
+            <span class="logo">VeshcheV</span>
+            <div class="header-block">
+                <search></search>
+                <button class="btn btn-cart" type="button" @click="show =!show">Корзина</button>
+                <cart v-if="show" :amount-cart="amountCart" :count-goods="countGoodsCart" :products-cart="productsCart">
+                </cart>
+            </div>
+        </header>
+        <main>
+            <error v-if="error"></error>
+            <products :filtered="filteredProducts" :img="imgProduct"></products>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="js/productsComponent.js"></script>
+    <script src="js/cartComponent.js"></script>
+    <script src="js/searchComponent.js"></script>
+    <script src="js/error.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
