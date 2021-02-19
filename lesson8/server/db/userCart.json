@@ -1,0 +1,20 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "id_product": 456,
+            "product_name": "Mouse",
+            "price": 1000,
+            "img": "https://www.dhresource.com/0x0/f2/albu/g6/M01/59/57/rBVaR1vS1d-AG8TdAAFwOI51Tmk038.jpg",
+            "quantity": 1
+        },
+        {
+            "id_product": 123,
+            "product_name": "Notebook",
+            "price": 45600,
+            "img": "https://www.ixbt.com/img/r30/00/02/27/66/honor-magicbook-14-big.jpg",
+            "quantity": 1
+        }
+    ]
+}
