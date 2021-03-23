@@ -1,0 +1,13 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "id_product": 123,
+            "product_name": "Notebook",
+            "price": 45600,
+            "img": "https://www.ixbt.com/img/r30/00/02/27/66/honor-magicbook-14-big.jpg",
+            "quantity": 4
+        }
+    ]
+}
