@@ -1,0 +1,26 @@
+[
+  {
+    "id_product": 124,
+    "product_name": "Keyboard",
+    "price": 1600,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU9gu09vi4mSHJeHxVx7ZVsCvZ9H_TPO1TNw&usqp=CAU"
+  },
+  {
+    "id_product": 457,
+    "product_name": "Gamepad",
+    "price": 3000,
+    "img": "https://images-na.ssl-images-amazon.com/images/I/512zWHO9kqL._AC_SL1000_.jpg"
+  },
+  {
+    "id_product": 123,
+    "product_name": "Notebook",
+    "price": 45600,
+    "img": "https://www.ixbt.com/img/r30/00/02/27/66/honor-magicbook-14-big.jpg"
+  },
+  {
+    "id_product": 456,
+    "product_name": "Mouse",
+    "price": 1000,
+    "img": "https://www.dhresource.com/0x0/f2/albu/g6/M01/59/57/rBVaR1vS1d-AG8TdAAFwOI51Tmk038.jpg"
+  }
+]
